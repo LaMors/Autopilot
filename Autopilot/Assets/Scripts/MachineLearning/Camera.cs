@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using AugurLib;
 
 namespace AssemblyCSharp.Assets.Scripts.MachineLearning
 {
@@ -45,7 +44,6 @@ namespace AssemblyCSharp.Assets.Scripts.MachineLearning
 
         public void Update()
         {
-            new Test().Log();
             if (!Available)
             {
                 //Debug.Log("Camera isn't availible");
