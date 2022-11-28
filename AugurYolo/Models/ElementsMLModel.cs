@@ -54,6 +54,10 @@ namespace AugurYolo.Models
         /// </summary>
         public override List<YoloLabel> Labels { get; set; } = new List<YoloLabel>()
         {
+            new Label { Id = 1, Name = "ClosedDoor", Kind = UiKind.ClosedDoor },
+            new Label { Id = 1, Name = "Object", Kind = UiKind.Object },
+            new Label { Id = 1, Name = "OpenedDoor", Kind = UiKind.OpenedDoor },
+            new Label { Id = 1, Name = "Wall", Kind = UiKind.Wall },
         };
 
         public override bool UseDetect { get; set; } = true;

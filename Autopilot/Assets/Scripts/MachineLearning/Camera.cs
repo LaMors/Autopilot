@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using AugurYolo;
 
 namespace AssemblyCSharp.Assets.Scripts.MachineLearning
 {
@@ -25,10 +26,7 @@ namespace AssemblyCSharp.Assets.Scripts.MachineLearning
             }
             foreach (var camera in devices)
             {
-                if (!camera.isFrontFacing)
-                {
                     BackCamera = new WebCamTexture(camera.name, Screen.width, Screen.height);
-                }
             }
             if (BackCamera is null)
             {
@@ -54,15 +52,6 @@ namespace AssemblyCSharp.Assets.Scripts.MachineLearning
 
             Fit.aspectRatio = ratio;
 
-            var texture = new Texture2D(BackCamera.width, BackCamera.height);
-
-            for (int x = 0; x < BackCamera.width; x++)
-            {
-                for (int y = 0; y < BackCamera.height; y++)
-                {
-                    texture.SetPixel(x, y, UnityEngine.Color.red);
-                }
-            }
             float scaleY = BackCamera.videoVerticallyMirrored ? -1f : 1f;
 
             Background.rectTransform.localScale = new Vector3(1f, scaleY, 1f);
@@ -70,7 +59,7 @@ namespace AssemblyCSharp.Assets.Scripts.MachineLearning
             int orient = -BackCamera.videoRotationAngle;
             Background.rectTransform.localEulerAngles = new Vector3(0,0,orient);
 
-            Background.texture = texture;
+            Background.texture = Augur.GetTexture(BackCamera);
         }
     }
 }

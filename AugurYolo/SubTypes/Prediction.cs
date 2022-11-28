@@ -12,7 +12,7 @@ namespace AugurYolo.SubTypes
     {
         internal new Label Label { get; set; }
 
-        //internal Point Center => GetCenter();
+        internal Point Center => GetCenter();
 
         internal Prediction(YoloPrediction yoloPrediction)
         {
@@ -25,6 +25,11 @@ namespace AugurYolo.SubTypes
         /// Method for calculating the center of the prediction rectangle
         /// </summary>
         /// <returns>Сenter point</returns>
-        //internal Point GetCenter() => Rectangle.GetCenter();
+        internal Point GetCenter()
+        {
+            int x = (int)(Rectangle.X + (Rectangle.Width / 2));
+            int y = (int)(Rectangle.Y + (Rectangle.Height / 2));
+            return new Point(x, y);
+        }
     }
 }

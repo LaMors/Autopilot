@@ -8,6 +8,9 @@ namespace AugurYolo.SubTypes
 {
     public enum UiKind
     {
-
+        ClosedDoor,
+        Object,
+        OpenedDoor,
+        Wall
     }
 }
