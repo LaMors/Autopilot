@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using AugurYolo;
 
 namespace AssemblyCSharp.Assets.Scripts.MachineLearning
 {
@@ -59,7 +58,6 @@ namespace AssemblyCSharp.Assets.Scripts.MachineLearning
             int orient = -BackCamera.videoRotationAngle;
             Background.rectTransform.localEulerAngles = new Vector3(0,0,orient);
 
-            Background.texture = Augur.GetTexture(BackCamera);
         }
     }
 }

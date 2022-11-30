@@ -13,7 +13,6 @@ namespace AssemblyCSharp.Assets.Scripts.WaySearch
 
         public List<GraphVertex> open = new List<GraphVertex>();
 
-
         public Dictionary<GraphVertex, float> costSoFar
            = new Dictionary<GraphVertex, float>();
 
@@ -24,7 +23,6 @@ namespace AssemblyCSharp.Assets.Scripts.WaySearch
             start.Priority = GetHeuristicCost(start, finish);
 
             costSoFar[start] = 0;
-
 
             while (open.Count > 0)
             {
